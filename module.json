@@ -1,16 +1,16 @@
 {
-  "name": "module",
-  "title": "New Module",
-  "description": "",
+  "name": "behaviour_trees",
+  "title": "Behaviour Trees",
+  "description": "An implementation of behaviour trees for Foundry VTT.",
   "version": "This is auto replaced",
   "library": "false",
   "manifestPlusVersion": "1.0.0",
-  "minimumCoreVersion": "0.7.9",
-  "compatibleCoreVersion": "0.7.9",
+  "minimumCoreVersion": "0.8.7",
+  "compatibleCoreVersion": "0.8.8",
   "authors": [
     {
-      "name": "The League of Extraordinary FVTT Developers",
-      "url": "https://github.com/League-of-Foundry-Developers",
+      "name": "RhombusWeasel",
+      "url": "https://github.com/RhombusWeasel/Behaviour-Trees/",
       "discord": "discordID#0001"
     }
   ],
