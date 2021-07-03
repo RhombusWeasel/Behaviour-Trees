@@ -10,7 +10,7 @@ Hooks.on('ready', () => {
     Hooks.on('renderTokenConfig', ui_hud.render);
 });
 
-Hooks.on("'renderTokenHUD'", async (hud, html, token) => {
+Hooks.on('renderTokenHUD', async (hud, html, token) => {
     ui_log.debug('Behaviour Tree HUD.', hud, html, token);
 //    if (game.user.isGM) {
         const ai_tool = await renderTemplate('/modules/behaviour_trees/templates/hud.html', {});
