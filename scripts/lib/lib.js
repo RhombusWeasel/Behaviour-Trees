@@ -8,12 +8,12 @@ class logger {
     constructor(ident) {
         this.ident = ident
     }
-    log() {
-        console.log('Behaviour-Trees |', this.ident, arguments);
+    log(lvl) {
+        console.log(lvl, '| Behaviour-Trees |', this.ident, arguments);
     }
     debug() {
-        if (game.settings.get('ai', 'ai_log_level') >= DEBUG) {
-            this.log(arguments);
+        if (game.settings.get('behaviour-trees', 'ai_log_level') >= DEBUG) {
+            this.log('DEBUG', arguments);
         }
     }
 

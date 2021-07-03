@@ -5,7 +5,7 @@ Hooks.once('init', async function() {
 });
 
 Hooks.once('ready', async function() {
-    game.settings.register('ai', 'ai_log_level', {
+    game.settings.register('behaviour-trees', 'ai_log_level', {
         name: 'AI Log Level',
         scope: 'world',      // "world" = sync to db, "client" = local storage 
         config: true,       // false if you dont want it to show in module config
