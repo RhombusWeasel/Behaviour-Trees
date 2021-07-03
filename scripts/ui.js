@@ -6,9 +6,9 @@ const ui_hud = {
     }
 }
 
-Hooks.on('ready') {
+Hooks.on('ready', () => {
     Hooks.on('renderTokenConfig', ui_hud.render);
-}
+});
 
 Hooks.on("'renderTokenHUD'", (hud, html, token) => {
 
