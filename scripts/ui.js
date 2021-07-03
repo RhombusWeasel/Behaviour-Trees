@@ -10,7 +10,7 @@ Hooks.on("getSceneControlButtons", (controls, b, c) => {
         toggle: false,
         active: true,
         onClick: (toggle) => {
-            let selected = get_selected();
+            let selected = bt.user.get_selected();
             if (selected == false) {
                 ui_log.error('No Token Selected.');
             }
