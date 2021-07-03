@@ -1,5 +1,15 @@
 let ui_log = new bt_logger('/scripts/ui.js');
 
+const ui_hud = {
+    render: async (token) => {
+        ui_log.debug('HUD rendered.', token);
+    }
+}
+
+Hooks.on('ready') {
+    Hooks.on('renderTokenConfig', ui_hud.render);
+}
+
 Hooks.on("'renderTokenHUD'", (hud, html, token) => {
 
     if (game.user.isGM) {
