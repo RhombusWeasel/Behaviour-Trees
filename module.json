@@ -25,7 +25,8 @@
   ],
   "scripts": [
     "/scripts/lib/lib.js",
-    "/scripts/lib/ai.js"
+    "/scripts/lib/ai.js",
+    "/scripts/ui.js"
   ],
   "styles": [
     "/styles/module.css"
