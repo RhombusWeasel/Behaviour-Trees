@@ -1,4 +1,7 @@
+let ident = '/scripts/ui.js';
+
 Hooks.on("getSceneControlButtons", (controls, b, c) => {
+
     if (game.user.isGM) {
         let ai_tool = {
         name: "setTokenAI",
@@ -9,10 +12,11 @@ Hooks.on("getSceneControlButtons", (controls, b, c) => {
         onClick: (toggle) => {
             let selected = get_selected();
             if (selected == false) {
-
+                debug_log(ident, 'Added')
             }
         },
         };
         controls.find((c) => c.name == "token").tools.push(ai_tool);
     }
+
 });
