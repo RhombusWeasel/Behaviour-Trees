@@ -9,11 +9,29 @@ class logger {
         this.ident = ident
     }
     log(lvl) {
-        console.log(lvl, '| Behaviour-Trees |', this.ident, arguments);
+        console.log('| Behaviour-Trees |', lvl, this.ident, arguments);
     }
     debug() {
         if (game.settings.get('behaviour-trees', 'ai_log_level') >= DEBUG) {
             this.log('DEBUG', arguments);
+        }
+    }
+
+    info() {
+        if (game.settings.get('behaviour-trees', 'ai_log_level') >= INFO) {
+            this.log('INFO', arguments);
+        }
+    }
+
+    warn() {
+        if (game.settings.get('behaviour-trees', 'ai_log_level') >= WARN) {
+            this.log('WARNING', arguments);
+        }
+    }
+
+    error() {
+        if (game.settings.get('behaviour-trees', 'ai_log_level') >= ERROR) {
+            this.log('ERROR', arguments);
         }
     }
 

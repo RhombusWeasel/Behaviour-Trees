@@ -8,7 +8,7 @@ Hooks.once('init', async function() {
         type: Boolean,
         default: true,
         onChange: value => {
-          mod_log.debug('AI Active: ', value);
+          mod_log.info('AI Active: ', value);
         }
     });
 
@@ -19,7 +19,7 @@ Hooks.once('init', async function() {
         type: Number,       // Number, Boolean, String,  
         default: 0,
         onChange: value => {
-          mod_log.debug('AI log level: ', value);
+          mod_log.info('AI log level: ', value);
         }
     });
 });

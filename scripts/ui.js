@@ -12,7 +12,7 @@ Hooks.on("getSceneControlButtons", (controls, b, c) => {
         onClick: (toggle) => {
             let selected = get_selected();
             if (selected == false) {
-                ui_log.debug(ident, 'No Token Selected.');
+                ui_log.error('No Token Selected.');
             }
         },
         };
