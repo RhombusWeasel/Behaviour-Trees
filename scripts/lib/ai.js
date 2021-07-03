@@ -11,7 +11,7 @@ this can allow for nodes getting a list of coordinates for example to pathfind i
 Data can be passed between nodes in a 'blackboard' that is passed from the master node to every child, this blackboard is a dictionary and can be written to and read by any node.
 */
 
-let ai_log = new logger('/scripts/lib/ai.js');
+let ai_log = new bt_logger('/scripts/lib/ai.js');
 
 const FAIL = 0;
 const PASS = 1;

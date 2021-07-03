@@ -1,4 +1,4 @@
-let ui_log = new logger('/scripts/ui.js');
+let ui_log = new bt_logger('/scripts/ui.js');
 
 Hooks.on("getSceneControlButtons", (controls, b, c) => {
 
@@ -13,6 +13,8 @@ Hooks.on("getSceneControlButtons", (controls, b, c) => {
             let selected = bt.user.get_selected();
             if (selected == false) {
                 ui_log.error('No Token Selected.');
+            } else {
+                ui_log.debug('Selected Token:', selected);
             }
         },
         };

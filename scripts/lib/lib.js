@@ -3,13 +3,13 @@ const INFO = 1;
 const WARN = 2;
 const ERROR = 3;
 
-class logger {
+class bt_logger {
 
     constructor(ident) {
         this.ident = ident
     }
     log(lvl) {
-        console.log('| Behaviour-Trees |', lvl, this.ident, arguments[0], arguments);
+        console.log('| Behaviour-Trees |', lvl, this.ident, arguments[1], arguments);
     }
     debug() {
         if (game.settings.get('behaviour-trees', 'ai_log_level') <= DEBUG) {
@@ -40,6 +40,12 @@ class logger {
 let bt = {
     user : {
         get_selected: function() {
+            for (let t = 0; t < canvas.tokens.placeables.length; t++) {
+                let tgt = canvas.tokens.placeables[t]
+                if (tgt._controlled) {
+                    return tgt;
+                }
+            }
             return false;
         },
     }
