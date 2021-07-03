@@ -19,6 +19,6 @@ class logger {
 
 }
 
-get_selected() {
+function get_selected() {
     return false;
 }
