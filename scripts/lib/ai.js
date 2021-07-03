@@ -152,19 +152,3 @@ class xor_node extends ai_node {
         return WAIT;
     }
 }
-
-Hooks.on("init", () => {
-
-    game.settings.register('behaviour-trees', 'ai_active', {
-        name: 'AI Active',
-        scope: 'world',      // "world" = sync to db, "client" = local storage 
-        config: false,       // false if you dont want it to show in module config
-        type: Boolean,       // Number, Boolean, String,  
-        default: true,
-        onChange: value => {
-          ai_log.debug('AI Active: ', value);
-        }
-    });
-    ai_log.debug('AI System loaded.');
-
-});

@@ -19,13 +19,6 @@ class logger {
 
 }
 
-class user_utils {
-
-    constructor() {
-
-    }
-    get_selected() {
-        return false;
-    }
-
+get_selected() {
+    return false;
 }
