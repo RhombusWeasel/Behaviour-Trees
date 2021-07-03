@@ -12,28 +12,28 @@ class logger {
         console.log('| Behaviour-Trees |', lvl, this.ident, arguments);
     }
     debug() {
-        console.log(game.settings.get('behaviour-trees', 'ai_log_level'));
+        console.log(game.settings.get('behaviour-trees', 'ai_log_level'), arguments);
         if (game.settings.get('behaviour-trees', 'ai_log_level') >= DEBUG) {
             this.log('DEBUG', arguments);
         }
     }
 
     info() {
-        console.log(game.settings.get('behaviour-trees', 'ai_log_level'));
+        console.log(game.settings.get('behaviour-trees', 'ai_log_level'), arguments);
         if (game.settings.get('behaviour-trees', 'ai_log_level') >= INFO) {
             this.log('INFO', arguments);
         }
     }
 
     warn() {
-        console.log(game.settings.get('behaviour-trees', 'ai_log_level'));
+        console.log(game.settings.get('behaviour-trees', 'ai_log_level'), arguments);
         if (game.settings.get('behaviour-trees', 'ai_log_level') >= WARN) {
             this.log('WARNING', arguments);
         }
     }
 
     error() {
-        console.log(game.settings.get('behaviour-trees', 'ai_log_level'));
+        console.log(game.settings.get('behaviour-trees', 'ai_log_level'), arguments);
         if (game.settings.get('behaviour-trees', 'ai_log_level') >= ERROR) {
             this.log('ERROR', arguments);
         }
