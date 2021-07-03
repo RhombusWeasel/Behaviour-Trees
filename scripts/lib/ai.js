@@ -153,7 +153,7 @@ class xor_node extends ai_node {
     }
 }
 
-Hooks.on("ready", () => {
+Hooks.on("init", () => {
 
     game.settings.register('behaviour-trees', 'ai_active', {
         name: 'AI Active',

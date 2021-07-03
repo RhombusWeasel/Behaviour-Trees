@@ -1,10 +1,6 @@
 let mod_log = new logger('/scripts/module.js');
 
 Hooks.once('init', async function() {
-
-});
-
-Hooks.once('ready', async function() {
     game.settings.register('behaviour-trees', 'ai_log_level', {
         name: 'AI Log Level',
         scope: 'world',      // "world" = sync to db, "client" = local storage 
@@ -15,4 +11,8 @@ Hooks.once('ready', async function() {
           mod_log.debug('AI Active: ', value);
         }
     });
+});
+
+Hooks.once('ready', async function() {
+    
 });
