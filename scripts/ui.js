@@ -1,4 +1,4 @@
-let ident = '/scripts/ui.js';
+let ui_log = new logger('/scripts/ui.js');
 
 Hooks.on("getSceneControlButtons", (controls, b, c) => {
 
@@ -12,7 +12,7 @@ Hooks.on("getSceneControlButtons", (controls, b, c) => {
         onClick: (toggle) => {
             let selected = get_selected();
             if (selected == false) {
-                debug_log(ident, 'Added')
+                ui_log.debug(ident, 'No Token Selected.');
             }
         },
         };
