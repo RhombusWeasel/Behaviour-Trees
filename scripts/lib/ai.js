@@ -165,5 +165,5 @@ Hooks.on("ready", () => {
           debug_log('AI Active: ', value);
         }
     });
-    debug_log('AI System loaded.');
+    lib.debug_log('AI System loaded.');
 });
