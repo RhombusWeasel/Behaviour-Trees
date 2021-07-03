@@ -3,5 +3,5 @@ function debug_log(ident) {
 }
 
 function get_selected() {
-    
+    return false;
 }
