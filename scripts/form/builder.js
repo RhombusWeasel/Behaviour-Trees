@@ -1,3 +1,7 @@
+var isDown;
+var offset = [];
+var mousePosition;
+
 class ai_builder extends FormApplication {
     constructor(token) {
         super();
@@ -25,6 +29,9 @@ class ai_builder extends FormApplication {
 
     activateListeners(html) {
         super.activateListeners(html);
+        html.find(".moveable-header").click(this._on_mouse_down.bind(this));
+        html.find(".moveable-header").click(this._on_mouse_up.bind(this));
+        html.find(".moveable-header").click(this._on_mouse_move.bind(this));
     }
 
     _get_nodes() {
@@ -75,6 +82,40 @@ class ai_builder extends FormApplication {
                     ],
                 }
             ],
+        }
+    }
+
+    _on_mouse_down(event) {
+        event.preventDefault();
+        let element = event.currentTarget;
+        let div = element.closest(".moveable");
+        isDown = true;
+        offset = [
+            div.offsetLeft - e.clientX,
+            div.offsetTop - e.clientY
+        ];
+    }
+
+    _on_mouse_up(event) {
+        event.preventDefault();
+        let element = event.currentTarget;
+        let div = element.closest(".moveable");
+        isDown = false
+    }
+
+    _on_mouse_move(event) {
+        event.preventDefault();
+        let element = event.currentTarget;
+        let div = element.closest(".moveable");
+        if (isDown) {
+            mousePosition = {
+        
+                x : event.clientX,
+                y : event.clientY
+        
+            };
+            div.style.left = (mousePosition.x + offset[0]) + 'px';
+            div.style.top  = (mousePosition.y + offset[1]) + 'px';
         }
     }
 
