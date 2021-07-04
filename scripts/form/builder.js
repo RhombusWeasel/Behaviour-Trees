@@ -7,10 +7,10 @@ class ai_builder extends FormApplication {
 
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ['form'],
+            classes: ['module'],
             popOut: true,
             template: `/templates/builder.html`,
-            id: 'ai_builder',
+            id: `ai_builder_${this.token.id}`,
             title: 'AI Builder',
         });
     }
