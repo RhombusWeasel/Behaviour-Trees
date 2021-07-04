@@ -17,6 +17,7 @@ Hooks.on('renderTokenHUD', async (hud, html, token) => {
         html.find('div.right')
             .append(ai_tool)
             .click((event) => {
+                ui_log.debug(event);
                 new ai_builder(token).render(true);
             }
         );
