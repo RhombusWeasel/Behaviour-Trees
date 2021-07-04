@@ -79,9 +79,10 @@ class ai_builder extends FormApplication {
         html.find(".clear-ai-data").click(this._on_clear_data.bind(this));
         let drag = document.getElementsByClassName("moveable-header");
         console.log('DRAG LIST', drag);
-        drag.forEach(element => {
-            dragElement(element); 
-        });
+        for (let i = 0; i < drag.length; i++) {
+            const element = drag[i];
+            dragElement(element);
+        } 
     }
 
     _on_clear_data(event) {
