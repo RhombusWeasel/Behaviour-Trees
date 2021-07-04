@@ -23,7 +23,6 @@ class ai_builder extends FormApplication {
             token: this.token,
             nodes: [this._get_nodes()]
         };
-        this.log.debug('getData()', data);
         return data;
     }
 

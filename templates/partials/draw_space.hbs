@@ -1,10 +1,15 @@
-<section>
-    {{#each nodes as |node|}}
+{{#each nodes as |node|}}
+    <section>
         <div class="moveable">
             <a class="moveable-header"><h3 class="{{node.type}}-header bb">{{node.label}}</h3></a>
         </div>
-        {{#each node.branches as |node|}}
-            {{> "modules/behaviour_trees/templates/partials/draw_space.hbs"}}
-        {{/each}}
+    </section>
+    {{#each node.branches as |node|}}
+    <section>
+        <div class="moveable">
+            <a class="moveable-header"><h3 class="{{node.type}}-header bb">{{node.label}}</h3></a>
+        </div>
+    </section>
+        {{> "modules/behaviour_trees/templates/partials/draw_space.hbs"}}
     {{/each}}
-</section>
+{{/each}}
