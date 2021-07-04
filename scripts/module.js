@@ -26,7 +26,7 @@ Hooks.once('init', async function() {
         type: Number,       // Number, Boolean, String,  
         default: 0,
         onChange: value => {
-          mod_log.info('AI log level: ', value);
+            mod_log.info('AI log level: ', value);
         }
     });
 
