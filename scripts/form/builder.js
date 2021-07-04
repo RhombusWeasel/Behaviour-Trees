@@ -95,16 +95,14 @@ class ai_builder extends FormApplication {
         let div = element.closest(".moveable");
         isDown = true;
         offset = [
-            div.offsetLeft - e.clientX,
-            div.offsetTop - e.clientY
+            div.offsetLeft - element.clientX,
+            div.offsetTop - element.clientY
         ];
     }
 
     _on_mouse_up(event) {
         event.preventDefault();
         this.log.debug('Mouse UP event', event);
-        let element = event.currentTarget;
-        let div = element.closest(".moveable");
         isDown = false
     }
 
