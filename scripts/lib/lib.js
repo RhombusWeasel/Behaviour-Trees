@@ -9,7 +9,7 @@ class bt_logger {
         this.ident = ident
     }
     log(lvl) {
-        console.log('%c| Behaviour-Trees |', 'font-size: 32px', '%c'+lvl, 'font-size: 32px', this.ident, arguments[1], arguments);
+        console.log('%c| Behaviour-Trees |', '%c'+lvl, 'font-size: 32px', 'font-size: 32px', this.ident, arguments[1], arguments);
     }
     debug() {
         if (game.settings.get('behaviour-trees', 'ai_log_level') <= DEBUG) {
