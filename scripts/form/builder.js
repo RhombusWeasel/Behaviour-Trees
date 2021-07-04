@@ -37,7 +37,7 @@ class ai_builder extends FormApplication {
 
     _on_clear_data(event) {
         this.log.debug('_clear_data()');
-        this.token.removeFlag('behaviour_trees', 'ai_data')
+        this.token.unsetFlag('behaviour_trees', 'ai_data');
     }
 
     _get_nodes() {
