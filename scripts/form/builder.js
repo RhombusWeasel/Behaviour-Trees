@@ -101,7 +101,7 @@ class ai_builder extends FormApplication {
             type: 'loop',
             label: 'Main Loop',
             current: 0,
-            pos: {x: 50, y: 10},
+            pos: {x: 500, y: 100},
             result: bt.nodes.WAIT,
             branches: [
                 {
@@ -114,7 +114,7 @@ class ai_builder extends FormApplication {
                             type: 'loop',
                             label: 'Main Loop',
                             current: 0,
-                            pos: {x: 50, y: 50},
+                            pos: {x: 50, y: 300},
                             result: bt.nodes.WAIT,
                             branches: [
                                 
@@ -132,7 +132,7 @@ class ai_builder extends FormApplication {
                             type: 'loop',
                             label: 'Main Loop',
                             current: 0,
-                            pos: {x: 100, y: 50},
+                            pos: {x: 1000, y: 300},
                             result: bt.nodes.WAIT,
                             branches: [
                                 
