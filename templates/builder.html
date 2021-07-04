@@ -4,10 +4,6 @@
         <h3 class="center">{{token.name}}</h3>
     </div>
     <div>
-    {{#each nodes.branches as |node|}}
-        <div>
-            <h3 class="center">{{node.label}}</h3>
-        </div>
-    {{/each}}
+        {{> "modules/behaviour_trees/templates/partials/draw_space.hbs"}}
     </div>
 </form>
