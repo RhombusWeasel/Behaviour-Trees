@@ -2,7 +2,7 @@ class ai_builder extends FormApplication {
     constructor(token) {
         super();
         this.token = token;
-        this.log = new bt_logger(token.name);
+        this.log = new bt.logger(token.name);
     }
 
     static get defaultOptions() {

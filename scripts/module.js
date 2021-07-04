@@ -1,4 +1,4 @@
-let mod_log = new bt_logger('/scripts/module.js');
+let mod_log = new bt.logger('/scripts/module.js');
 
 Hooks.once('init', async function() {
     game.settings.register('behaviour-trees', 'ai_active', {

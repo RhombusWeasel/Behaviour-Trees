@@ -1,4 +1,4 @@
-let ui_log = new bt_logger('/scripts/ui.js');
+let ui_log = new bt.logger('/scripts/ui.js');
 
 const ui_hud = {
     render: async (token) => {
