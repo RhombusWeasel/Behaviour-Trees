@@ -1,7 +1,10 @@
 <section>
     {{#each nodes as |node|}}
-        <div class="moveable loop-header bb">
-            <h3 class="moveable-header bb">{{node.label}}</h3>
+        <div class="moveable bb">
+            <h3 class="moveable-header {{node.type}}-header bb">{{node.label}}</h3>
+            {{#each node.branches as list}}
+                {{> "modules/behaviour_trees/templates/partials/draw_space.hbs"}}
+            {{/each}}
         </div>
     {{/each}}
 </section>

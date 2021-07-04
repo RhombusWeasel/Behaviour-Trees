@@ -33,7 +33,49 @@ class ai_builder extends FormApplication {
             return JSON.parse(this.token.flags.behaviour_trees.ai_data);
         }
         this.log.info('Creating new AI Data...', this.token);
-        return bt.ai.new_node('loop', 'Main Loop');
+        //return bt.ai.new_node('loop', 'Main Loop');
+        return {
+            type: 'loop',
+            label: 'Main Loop',
+            current: 0,
+            result: bt.nodes.WAIT,
+            branches: [
+                {
+                    type: 'or',
+                    label: 'Query',
+                    current: 0,
+                    result: bt.nodes.WAIT,
+                    branches: [
+                        {
+                            type: 'loop',
+                            label: 'Main Loop',
+                            current: 0,
+                            result: bt.nodes.WAIT,
+                            branches: [
+                                
+                            ],
+                        }
+                    ],
+                },
+                {
+                    type: 'and',
+                    label: 'Sequence',
+                    current: 0,
+                    result: bt.nodes.WAIT,
+                    branches: [
+                        {
+                            type: 'loop',
+                            label: 'Main Loop',
+                            current: 0,
+                            result: bt.nodes.WAIT,
+                            branches: [
+                                
+                            ],
+                        }
+                    ],
+                }
+            ],
+        }
     }
 
     async _updateObject(event, data) {
