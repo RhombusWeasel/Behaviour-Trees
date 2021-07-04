@@ -7,8 +7,8 @@ class ai_builder extends FormApplication {
 
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ['module'],
-            template: 'templates/builder.html',
+            classes: ['module', 'form'],
+            template: '/templates/builder.html',
             title: 'AI Builder',
             resizable: true
         });
