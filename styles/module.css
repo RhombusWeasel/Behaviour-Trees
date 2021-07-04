@@ -5,11 +5,13 @@
     border: 1px solid #d3d3d3;
     z-index: 9;
     padding: 10px;
+    border-radius: 10px;
 }
 .moveable-header {
     padding: 10px;
     cursor: move;
     z-index: 10;
+    border-radius: 10px;
 }
 .bb {
     border: 1px solid #000;
