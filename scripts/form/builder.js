@@ -6,6 +6,7 @@ class ai_builder extends FormApplication {
     }
 
     static get defaultOptions() {
+        this.log.debug(this);
         return mergeObject(super.defaultOptions, {
             classes: ['module'],
             popOut: true,
