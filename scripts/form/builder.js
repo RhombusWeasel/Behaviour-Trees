@@ -11,7 +11,7 @@ class ai_builder extends FormApplication {
             classes: ['module'],
             popOut: true,
             template: `/templates/builder.html`,
-            id: `ai_builder_${this.token.id}`,
+            id: `ai_builder`,
             title: 'AI Builder',
         });
     }
