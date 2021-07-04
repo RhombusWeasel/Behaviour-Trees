@@ -6,10 +6,9 @@ class ai_builder extends FormApplication {
     }
 
     static get defaultOptions() {
-       console.log(this);
         return mergeObject(super.defaultOptions, {
             classes: ['module'],
-            template: `/templates/builder.html`,
+            template: '/templates/builder.html',
             title: 'AI Builder',
         });
     }
