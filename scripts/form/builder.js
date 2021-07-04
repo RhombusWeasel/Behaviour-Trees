@@ -3,13 +3,13 @@ var offset = [];
 var mousePosition;
 
 // Make the DIV element draggable:
-dragElement(document.getElementById("moveable"));
+
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
+  if (document.getElementById(elmnt.id + "-header")) {
     // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    document.getElementById(elmnt.id + "-header").onmousedown = dragMouseDown;
   } else {
     // otherwise, move the DIV from anywhere inside the DIV:
     elmnt.onmousedown = dragMouseDown;
@@ -73,10 +73,11 @@ class ai_builder extends FormApplication {
     activateListeners(html) {
         super.activateListeners(html);
         this.log.debug(html);
-        html.find(".moveable-header").click(this._on_mouse_down.bind(this));
-        html.find(".moveable-header").click(this._on_mouse_up.bind(this));
-        html.find(".moveable-header").click(this._on_mouse_move.bind(this));
+        //html.find(".moveable-header").click(this._on_mouse_down.bind(this));
+        //html.find(".moveable-header").click(this._on_mouse_up.bind(this));
+        //html.find(".moveable-header").click(this._on_mouse_move.bind(this));
         html.find(".clear-ai-data").click(this._on_clear_data.bind(this));
+        dragElement(document.getElementById("moveable"));
     }
 
     _on_clear_data(event) {
@@ -142,14 +143,14 @@ class ai_builder extends FormApplication {
 
     _on_mouse_down(event) {
         //event.preventDefault();
-        this.log.debug('Mouse DOWN event', event);
-        let element = event.currentTarget;
-        let div = element.closest(".moveable");
-        isDown = true;
-        offset = [
-            div.offsetLeft - element.clientX,
-            div.offsetTop - element.clientY
-        ];
+        // this.log.debug('Mouse DOWN event', event);
+        // let element = event.currentTarget;
+        // let div = element.closest(".moveable");
+        // isDown = true;
+        // offset = [
+        //     div.offsetLeft - element.clientX,
+        //     div.offsetTop - element.clientY
+        // ];
     }
 
     _on_mouse_up(event) {
