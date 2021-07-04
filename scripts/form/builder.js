@@ -28,3 +28,5 @@ class ai_builder extends FormApplication {
         this.log.debug(data.token);
     }
 }
+
+window.ai_builder = ai_builder;
