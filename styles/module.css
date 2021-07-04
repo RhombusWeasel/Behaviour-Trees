@@ -17,6 +17,22 @@
     background-color: #2dd6d6;
     color: #fff;
 }
+.and-header {
+    background-color: #2dd69e;
+    color: #fff;
+}
+.or-header {
+    background-color: #a9d62d;
+    color: #fff;
+}
+.xor-header {
+    background-color: #2d46d6;
+    color: #fff;
+}
+.inv-header {
+    background-color: #d6922d;
+    color: #fff;
+}
 .fill {
     width: 100%;
     height: 100%;
