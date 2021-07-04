@@ -59,9 +59,8 @@ let bt = {
     
     token: {},
     
-    nodes: {
-
-        new: function(type, label) {
+    ai: {
+        new_node: function(type, label) {
             return {
                 type: type,
                 label: label,
@@ -77,6 +76,9 @@ let bt = {
             state.current = 0
             state.value = bt.WAIT
         },
+    },
+
+    nodes: {
         loop: {
             update: function(state, token) {
                 let node = state.branches[state.current].type;
@@ -86,7 +88,7 @@ let bt = {
                     state.value = result;
                 }
                 if (state.current > state.branches.length) {
-                    bt.nodes.reset(state);
+                    bt.ai.reset(state);
                 }
             }
         },

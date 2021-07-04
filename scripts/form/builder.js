@@ -17,11 +17,19 @@ class ai_builder extends FormApplication {
     getData() {
         return {
             token: this.token,
+            nodes: this._get_nodes()
         };
     }
 
     activateListeners(html) {
         super.activateListeners(html);
+    }
+
+    _get_nodes() {
+        if (this.token?.flags?.behaviour_trees?.ai_data) {
+            return JSON.parse(this.token.flags.behaviour_trees.ai_data);
+        }
+        return bt.ai.new_node('loop', 'Main Loop');
     }
 
     async _updateObject(event, data) {

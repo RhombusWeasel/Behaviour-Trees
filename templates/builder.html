@@ -3,7 +3,11 @@
         <h1 class="center">AI Behaviour Trees</h1>
         <h3 class="center">{{token.name}}</h3>
     </div>
-    <div class="flexrow perc20">
-        
+    <div>
+    {{#each nodes.branches as | node}}
+        <div>
+            <h3 class="center">{{node.label}}</h3>
+        </div>
+    {{/each}}
     </div>
 </form>
