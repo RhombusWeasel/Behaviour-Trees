@@ -72,10 +72,6 @@ class ai_builder extends FormApplication {
 
     activateListeners(html) {
         super.activateListeners(html);
-        this.log.debug(html);
-        //html.find(".moveable-header").click(this._on_mouse_down.bind(this));
-        //html.find(".moveable-header").click(this._on_mouse_up.bind(this));
-        //html.find(".moveable-header").click(this._on_mouse_move.bind(this));
         html.find(".clear-ai-data").click(this._on_clear_data.bind(this));
         let drag = document.getElementsByClassName("moveable-header");
         console.log('DRAG LIST', drag);
@@ -91,50 +87,19 @@ class ai_builder extends FormApplication {
     }
 
     _get_nodes() {
+        let data = bt.ai.new_node('loop', 'Main Loop', 300, 100);
+        let nodes = {}
         if (this.token?.data?.flags?.behaviour_trees?.ai_data) {
             this.log.debug('AI Data found, loading...', this.token.data.flags.behaviour_trees.ai_data);
-            return JSON.parse(this.token.data.flags.behaviour_trees.ai_data);
+            data = JSON.parse(this.token.data.flags.behaviour_trees.ai_data);
+        } else {
+            if (this.token?.data?.flags?.behaviour_trees?.nodes) {
+                nodes = JSON.parse(this.token.data.flags.behaviour_trees.ai_data);
+                nodes[data.uuid] = data
+            }
+            this.token.setFlag('behaviour_trees', 'ai_data', JSON.stringify(data));
         }
-        this.log.info('Creating new AI Data...', this.token);
-        let data = bt.ai.new_node('loop', 'Main Loop');
-        this.token.setFlag('behaviour_trees', 'ai_data', JSON.stringify(data));
         return data;
-    }
-
-    _on_mouse_down(event) {
-        //event.preventDefault();
-        // this.log.debug('Mouse DOWN event', event);
-        // let element = event.currentTarget;
-        // let div = element.closest(".moveable");
-        // isDown = true;
-        // offset = [
-        //     div.offsetLeft - element.clientX,
-        //     div.offsetTop - element.clientY
-        // ];
-    }
-
-    _on_mouse_up(event) {
-        //event.preventDefault();
-        this.log.debug('Mouse UP event', event);
-        isDown = false
-    }
-
-    _on_mouse_move(event) {
-        event.preventDefault();
-        this.log.debug('Mouse MOVE event', event);
-        let element = event.currentTarget;
-        let div = element.closest(".moveable");
-        if (isDown) {
-            mousePosition = {
-        
-                x : event.clientX,
-                y : event.clientY
-        
-            };
-            div.style.left = (mousePosition.x + offset[0]) + 'px';
-            div.style.top  = (mousePosition.y + offset[1]) + 'px';
-        }
-        this.render()
     }
 
     async _updateObject(event, data) {
