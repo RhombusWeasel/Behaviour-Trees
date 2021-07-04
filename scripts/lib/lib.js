@@ -3,6 +3,8 @@ const INFO = 1;
 const WARN = 2;
 const ERROR = 3;
 
+const uuid_keys = '0123456789aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ'
+
 let bt = {
 
     FAIL: 0,
@@ -44,7 +46,20 @@ let bt = {
         }
     
     },
-    
+    /** UUID
+     * Pass any number of integers, returns a uuid with char blocks equal to each int '-' seperated
+     */
+    uuid: function() {
+        let str = ''
+        for (let a = 0; a < arguments.length; a++) {
+            for (let i = 0; i < arguments[a]; i++) {
+                str += uuid_keys[Math.floor(Math.random() * uuid_keys.length)];
+            }
+            str += '-'
+        }
+        return str
+    },
+
     user : {
         get_selected: function() {
             for (let t = 0; t < canvas.tokens.placeables.length; t++) {
