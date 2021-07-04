@@ -19,22 +19,27 @@
 .loop-header {
     background-color: #2dd6d6;
     color: #fff;
+    border-radius: 10px;
 }
 .and-header {
     background-color: #2dd69e;
     color: #fff;
+    border-radius: 10px;
 }
 .or-header {
     background-color: #a9d62d;
     color: #fff;
+    border-radius: 10px;
 }
 .xor-header {
     background-color: #2d46d6;
     color: #fff;
+    border-radius: 10px;
 }
 .inv-header {
     background-color: #d6922d;
     color: #fff;
+    border-radius: 10px;
 }
 .fill {
     width: 100%;
