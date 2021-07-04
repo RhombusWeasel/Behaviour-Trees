@@ -35,7 +35,7 @@ class ai_builder extends FormApplication {
         html.find(".clear-ai-data").click(this._on_clear_data.bind(this));
     }
 
-    _clear_data(event) {
+    _on_clear_data(event) {
         this.log.debug('_clear_data()');
         this.token.removeFlag('behaviour_trees', 'ai_data')
     }
