@@ -5,7 +5,7 @@ var mousePosition;
 class ai_builder extends FormApplication {
     constructor(token) {
         super();
-        this.token = token;
+        this.token = canvas.tokens.placeables.find(i => i.name == token.name);
         this.log = new bt.logger(token.name);
     }
 
