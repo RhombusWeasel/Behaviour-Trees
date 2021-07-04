@@ -1,5 +1,12 @@
 let mod_log = new bt.logger('/scripts/module.js');
 
+async function preload_handlebars_templates() {
+  const template_paths = [
+      "modules/behaviour_trees/templates/partials/draw_space.hbs",
+  ]
+  return loadTemplates(template_paths)
+}
+
 Hooks.once('init', async function() {
     game.settings.register('behaviour-trees', 'ai_active', {
         name: 'AI Active',
@@ -22,6 +29,8 @@ Hooks.once('init', async function() {
           mod_log.info('AI log level: ', value);
         }
     });
+
+    preload_handlebars_templates();
 });
 
 Hooks.once('ready', async function() {
