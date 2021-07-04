@@ -1,15 +1,17 @@
 .moveable {
     position: absolute;
-    z-index: 9;
+    text-align: center;
     background-color: #f1f1f1;
     border: 1px solid #d3d3d3;
-    text-align: center;
+    z-index: 9;
 }
-  
 .moveable-header {
     padding: 10px;
     cursor: move;
     z-index: 10;
+    
+}
+.loop-header {
     background-color: #2dd6d6;
     color: #fff;
 }
