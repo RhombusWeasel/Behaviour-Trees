@@ -15,10 +15,12 @@ class ai_builder extends FormApplication {
     }
 
     getData() {
-        return {
+        let data = {
             token: this.token,
             nodes: this._get_nodes()
         };
+        this.log.debug(data);
+        return data;
     }
 
     activateListeners(html) {
