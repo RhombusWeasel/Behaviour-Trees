@@ -60,10 +60,11 @@ let bt = {
     token: {},
     
     ai: {
-        new_node: function(type, label) {
+        new_node: function(type, label, x, y) {
             return {
                 type: type,
                 label: label,
+                pos: {x: x, y: y},
                 branches: [],
                 current: 0,
                 result: bt.nodes.WAIT
