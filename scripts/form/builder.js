@@ -32,6 +32,12 @@ class ai_builder extends FormApplication {
         html.find(".moveable-header").click(this._on_mouse_down.bind(this));
         html.find(".moveable-header").click(this._on_mouse_up.bind(this));
         html.find(".moveable-header").click(this._on_mouse_move.bind(this));
+        html.find(".clear-ai-data").click(this._on_clear_data.bind(this));
+    }
+
+    _clear_data(event) {
+        this.log.debug('_clear_data()');
+        this.token.removeFlag('behaviour_trees', 'ai_data')
     }
 
     _get_nodes() {
