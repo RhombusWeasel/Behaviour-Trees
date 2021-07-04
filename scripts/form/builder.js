@@ -120,6 +120,7 @@ class ai_builder extends FormApplication {
             div.style.left = (mousePosition.x + offset[0]) + 'px';
             div.style.top  = (mousePosition.y + offset[1]) + 'px';
         }
+        this.render()
     }
 
     async _updateObject(event, data) {
