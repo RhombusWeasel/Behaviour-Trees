@@ -42,7 +42,7 @@ class ai_builder extends FormApplication {
         }
         this.log.info('Creating new AI Data...', this.token);
         //return bt.ai.new_node('loop', 'Main Loop');
-        return {
+        let data = {
             type: 'loop',
             label: 'Main Loop',
             current: 0,
@@ -87,6 +87,8 @@ class ai_builder extends FormApplication {
                 }
             ],
         }
+        this.token.setFlag('behaviour_trees', 'ai_data', JSON.stringify(data));
+        return data;
     }
 
     _on_mouse_down(event) {
