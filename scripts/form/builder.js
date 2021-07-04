@@ -91,7 +91,7 @@ class ai_builder extends FormApplication {
     }
 
     _on_mouse_down(event) {
-        event.preventDefault();
+        //event.preventDefault();
         this.log.debug('Mouse DOWN event', event);
         let element = event.currentTarget;
         let div = element.closest(".moveable");
@@ -103,7 +103,7 @@ class ai_builder extends FormApplication {
     }
 
     _on_mouse_up(event) {
-        event.preventDefault();
+        //event.preventDefault();
         this.log.debug('Mouse UP event', event);
         isDown = false
     }
