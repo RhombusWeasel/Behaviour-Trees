@@ -23,12 +23,13 @@ class ai_builder extends FormApplication {
             token: this.token,
             nodes: [this._get_nodes()]
         };
-        this.log.debug(data);
+        this.log.debug('getData()', data);
         return data;
     }
 
     activateListeners(html) {
         super.activateListeners(html);
+        this.log.debug(html);
         html.find(".moveable-header").click(this._on_mouse_down.bind(this));
         html.find(".moveable-header").click(this._on_mouse_up.bind(this));
         html.find(".moveable-header").click(this._on_mouse_move.bind(this));
