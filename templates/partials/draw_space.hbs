@@ -2,7 +2,7 @@
     <div class="moveable">
         <a class="moveable-header"><h3 class="{{this.type}}-header bb">{{this.label}}</h3></a>
     </div>
+    {{#each this.branches}}
+        {{> "modules/behaviour_trees/templates/partials/draw_space.hbs"}}
+    {{/each}}
 </section>
-{{#each this.branches}}
-    {{> "modules/behaviour_trees/templates/partials/draw_space.hbs"}}
-{{/each}}

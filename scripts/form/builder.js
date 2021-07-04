@@ -36,7 +36,7 @@ class ai_builder extends FormApplication {
 
     _get_nodes() {
         if (this.token?.flags?.behaviour_trees?.ai_data) {
-            this.log.debug('AI Data found, loading...', this.token.flags.behaviour_trees.ai_data);
+            this.log.debug('AI Data found, loading...', this.token.data.flags.behaviour_trees.ai_data);
             return JSON.parse(this.token.flags.behaviour_trees.ai_data);
         }
         this.log.info('Creating new AI Data...', this.token);
