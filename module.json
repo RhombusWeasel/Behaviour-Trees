@@ -26,6 +26,7 @@
   "scripts": [
     "/scripts/lib/lib.js",
     "/scripts/lib/ai.js",
+    "/scripts/form.builder.js",
     "/scripts/ui.js"
   ],
   "styles": [
