@@ -75,11 +75,13 @@ let bt = {
     token: {},
     
     ai: {
-        new_node: function(type, label, x, y) {
+        new_node: function(type, label, x, y, parent) {
             return {
                 type: type,
                 label: label,
                 pos: {x: x, y: y},
+                parent: parent,
+                uuid: bt.uuid(4, 4, 4, 4),
                 branches: [],
                 current: 0,
                 result: bt.nodes.WAIT

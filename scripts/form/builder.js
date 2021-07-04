@@ -96,52 +96,7 @@ class ai_builder extends FormApplication {
             return JSON.parse(this.token.data.flags.behaviour_trees.ai_data);
         }
         this.log.info('Creating new AI Data...', this.token);
-        //return bt.ai.new_node('loop', 'Main Loop');
-        let data = {
-            type: 'loop',
-            label: 'Main Loop',
-            current: 0,
-            pos: {x: 500, y: 100},
-            result: bt.nodes.WAIT,
-            branches: [
-                {
-                    type: 'or',
-                    label: 'Query',
-                    current: 0,
-                    result: bt.nodes.WAIT,
-                    branches: [
-                        {
-                            type: 'loop',
-                            label: 'Main Loop',
-                            current: 0,
-                            pos: {x: 50, y: 300},
-                            result: bt.nodes.WAIT,
-                            branches: [
-                                
-                            ],
-                        }
-                    ],
-                },
-                {
-                    type: 'and',
-                    label: 'Sequence',
-                    current: 0,
-                    result: bt.nodes.WAIT,
-                    branches: [
-                        {
-                            type: 'loop',
-                            label: 'Main Loop',
-                            current: 0,
-                            pos: {x: 1000, y: 300},
-                            result: bt.nodes.WAIT,
-                            branches: [
-                                
-                            ],
-                        }
-                    ],
-                }
-            ],
-        }
+        let data = bt.ai.new_node('loop', 'Main Loop');
         this.token.setFlag('behaviour_trees', 'ai_data', JSON.stringify(data));
         return data;
     }
