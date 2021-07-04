@@ -17,7 +17,7 @@ Hooks.on('renderTokenHUD', async (hud, html, token) => {
         html.find('div.right')
             .append(ai_tool)
             .click((event) => {
-                
+                new ai_builder(token).render(true);
             }
         );
 //    }
