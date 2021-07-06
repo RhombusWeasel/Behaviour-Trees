@@ -5,11 +5,12 @@ var mousePosition;
 // Make the DIV element draggable:
 
 
-function dragElement(elmnt) {
+function dragElement(elmnt, owner) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id)) {
     // if present, the header is where you move the DIV from:
     document.getElementById(elmnt.id + "-header").onmousedown = dragMouseDown;
+    this.log.debug(elmnt.id, elmnt);
   } else {
     // otherwise, move the DIV from anywhere inside the DIV:
     elmnt.onmousedown = dragMouseDown;
@@ -77,7 +78,7 @@ class ai_builder extends FormApplication {
         console.log('DRAG LIST', drag);
         for (let i = 0; i < drag.length; i++) {
             const element = drag[i];
-            dragElement(element);
+            dragElement(element, this);
         } 
     }
 
