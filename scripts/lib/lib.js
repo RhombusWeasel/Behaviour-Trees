@@ -55,7 +55,9 @@ let bt = {
             for (let i = 0; i < arguments[a]; i++) {
                 str += uuid_keys[Math.floor(Math.random() * uuid_keys.length)];
             }
-            str += '-'
+            if (a < arguments.length - 1) {
+                str += '-'
+            }
         }
         return str
     },
