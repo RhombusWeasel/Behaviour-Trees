@@ -9,8 +9,9 @@ function dragElement(elmnt, owner) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id)) {
     // if present, the header is where you move the DIV from:
-    owner.log.debug(elmnt.id, elmnt);
-    document.getElementById(elmnt.id + "-header").onmousedown = dragMouseDown;
+    let header = document.getElementById(elmnt.id + "-header")
+    owner.log.debug(elmnt.id, header);
+    header.onmousedown = dragMouseDown;
   } else {
     // otherwise, move the DIV from anywhere inside the DIV:
     elmnt.onmousedown = dragMouseDown;
