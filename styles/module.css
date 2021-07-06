@@ -15,31 +15,31 @@
 .bb {
     border: 1px solid #000;
 }
-.loop-header {
+.loop {
     background-color: #2dd6d6;
     color: #fff;
     padding: 10px;
     border-radius: 10px;
 }
-.and-header {
+.and {
     background-color: #2dd69e;
     color: #fff;
     padding: 10px;
     border-radius: 10px;
 }
-.or-header {
+.or {
     background-color: #a9d62d;
     color: #fff;
     padding: 10px;
     border-radius: 10px;
 }
-.xor-header {
+.xor {
     background-color: #2d46d6;
     color: #fff;
     padding: 10px;
     border-radius: 10px;
 }
-.inv-header {
+.inv {
     background-color: #d6922d;
     color: #fff;
     padding: 10px;
