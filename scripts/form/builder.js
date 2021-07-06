@@ -78,6 +78,7 @@ class ai_builder extends FormApplication {
         console.log('DRAG LIST', drag);
         for (let i = 0; i < drag.length; i++) {
             const element = drag[i];
+            this.log.debug('activateListeners()', element);
             dragElement(element, this);
         } 
     }
