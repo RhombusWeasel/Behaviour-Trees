@@ -36,14 +36,14 @@ Hooks.once('init', async function() {
 Hooks.once('ready', async function() {
     bt.journal = game.journal.getName('Behaviour Trees Node Data');
     mod_log.debug('Node Data:', bt.journal);
-    if (bt.node_data == undefined) {
+    if (bt.journal == undefined) {
         bt.journal = new Journal({
             name: 'Behaviour Trees Node Data',
             content: '{}'
         });
-        mod_log.debug('Node Data:', bt.journal);
+        mod_log.debug('New Node Data:', bt.journal);
         bt.node_data = {}
     } else {
-        
+
     }
 });
