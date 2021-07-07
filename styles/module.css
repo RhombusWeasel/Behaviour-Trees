@@ -16,13 +16,15 @@
     border-radius: 5px;
     padding: 5px;
 }
-.editor-button {
+.editor-menu {
+    list-style-type: none;
+}
+.menu-button {
     z-index: 11;
     border-radius: 5px;
     background-color: gray;
     color: #000;
     margin: 5px;
-    list-style-type: none;
     width: 100px;
     height: 20px;
 }
