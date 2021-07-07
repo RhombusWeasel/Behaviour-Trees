@@ -41,7 +41,7 @@ Hooks.once('ready', async function() {
             name: 'Behaviour Trees Node Data',
             content: JSON.stringify({})
         });
-        bt.journal.update();
+        bt.journal.update({content: JSON.stringify({})});
         mod_log.debug('New Node Data:', bt.journal);
         bt.node_data = {}
     //} else {
