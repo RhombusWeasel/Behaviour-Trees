@@ -3,10 +3,12 @@
         <h1 class="center">AI Behaviour Trees</h1>
         <h3 class="center">{{token.name}}</h3>
     </div>
-    <div>
-        <btn class="clear-ai-data">Clear</btn>
-    </div>
     <div class="node-box fill bb">
+        <ol>
+            <li>
+                <btn class="clear-ai-data editor-button">Clear</btn>
+            </li>
+        </ol>
         {{#each nodes}}
             {{> "modules/behaviour_trees/templates/partials/draw_space.hbs"}}
         {{/each}}

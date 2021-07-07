@@ -16,6 +16,13 @@
     border-radius: 5px;
     padding: 5px;
 }
+.editor-button {
+    z-index: 11;
+    border-radius: 5px;
+    background-color: gray;
+    color: #000;
+    margin: 5px;
+}
 .bb {
     border: 1px solid #000;
 }
