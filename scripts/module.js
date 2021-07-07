@@ -38,7 +38,8 @@ Hooks.once('ready', async function() {
     mod_log.debug('Node Data:', bt.journal);
     //if (bt.journal == undefined) {
         bt.journal = new JournalEntry({
-            name: 'Behaviour Trees Node Data',
+            _id: bt.uuid(4, 4, 4, 4),
+            name: 'Behaviour Trees Node Data'
         });
         bt.journal.update({
             _id: bt.journal._id,
