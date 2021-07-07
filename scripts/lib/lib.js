@@ -78,7 +78,7 @@ let bt = {
     
     ai: {
         new_node: function(type, label, x, y, parent) {
-            return {
+            let data = {
                 type: type,
                 label: label,
                 pos: {x: x, y: y},
@@ -88,6 +88,10 @@ let bt = {
                 current: 0,
                 result: bt.nodes.WAIT
             };
+            /** Write something here to add this to a journal as text or something similar
+             *  the journal should be formatted as a dictionary with each key being the uuid field of the new object.
+             */
+            return data;
         },
         reset: function(state) {
             for (let branch = 0; branch < state.branches.length; branch++) {

@@ -3,8 +3,6 @@ var offset = [];
 var mousePosition;
 
 // Make the DIV element draggable:
-
-
 function dragElement(elmnt, owner) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id)) {
@@ -74,7 +72,9 @@ class ai_builder extends FormApplication {
 
     activateListeners(html) {
         super.activateListeners(html);
+        html.find(".clear-ai-data").click(this._on_new_data.bind(this));
         html.find(".clear-ai-data").click(this._on_clear_data.bind(this));
+        html.find(".clear-ai-data").click(this._on_save_data.bind(this));
         let drag = document.getElementsByClassName("moveable");
         console.log('DRAG LIST', drag);
         for (let i = 0; i < drag.length; i++) {
@@ -84,9 +84,18 @@ class ai_builder extends FormApplication {
         } 
     }
 
+    _on_new_data(event) {
+        event.preventDefault();
+    }
+
     _on_clear_data(event) {
+        event.preventDefault();
         this.log.debug('_clear_data()');
         this.token.unsetFlag('behaviour_trees', 'ai_data');
+    }
+
+    _on_save_data(event) {
+        event.preventDefault();
     }
 
     _get_nodes() {
