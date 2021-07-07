@@ -71,16 +71,12 @@ class ai_builder extends FormApplication {
     }
 
     get_nodes() {
-        let nodes = {}
+        let data = []
         if (this.token?.data?.flags?.behaviour_trees?.master_node) {
             this.log.debug('AI Data found, loading...', this.token.data.flags.behaviour_trees.master_node);
             data = JSON.parse(this.token.data.flags.behaviour_trees.master_node);
         } else {
-            if (this.token?.data?.flags?.behaviour_trees?.nodes) {
-                nodes = JSON.parse(this.token.data.flags.behaviour_trees.master_node);
-                nodes[data.uuid] = data
-            }
-            this.token.setFlag('behaviour_trees', 'ai_data', JSON.stringify(data));
+            //this.token.setFlag('behaviour_trees', 'ai_data', JSON.stringify(data));
         }
         return data;
     }
