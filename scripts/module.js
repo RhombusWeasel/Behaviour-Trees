@@ -34,16 +34,17 @@ Hooks.once('init', async function() {
 });
 
 Hooks.once('ready', async function() {
-    bt.journal = game.journal.getName('Behaviour Trees Node Data');
+    bt.journal = game.journal.getName('BT');
     mod_log.debug('Node Data:', bt.journal);
     if (bt.journal == undefined) {
         bt.journal = new JournalEntry({
-            name: 'Behaviour Trees Node Data',
+            name: 'BT',
             content: JSON.stringify({})
         });
         mod_log.debug('New Node Data:', bt.journal);
         bt.node_data = {}
     } else {
-
+        bt.node_data = JSON.parse(bt.journal.data.content);
+        mod_log.info('Node Data loaded.', bt.node_data);
     }
 });
