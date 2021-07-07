@@ -34,5 +34,6 @@ Hooks.once('init', async function() {
 });
 
 Hooks.once('ready', async function() {
-    
+    bt.node_data = game.journal.getName('Behaviour Trees Node Data');
+    mod_log.debug('Node Data:', bt.node_data);
 });
