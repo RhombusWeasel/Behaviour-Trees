@@ -18,7 +18,10 @@ let bt = {
         }
     
         log(lvl) {
-            console.log('%c| Behaviour-Trees | '+lvl, 'font-size: 32px', this.ident, arguments[1], arguments);
+            console.log('%c| Behaviour-Trees | '+lvl, 'font-size: 32px', this.ident);
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
         }
     
         debug() {
