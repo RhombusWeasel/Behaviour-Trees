@@ -14,7 +14,7 @@
     cursor: move;
     z-index: 10;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 .bb {
     border: 1px solid #000;
