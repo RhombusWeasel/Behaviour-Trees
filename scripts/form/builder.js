@@ -65,16 +65,31 @@ class ai_builder extends FormApplication {
     getData() {
         let data = {
             token: this.token,
-            nodes: [this._get_nodes()]
+            nodes: [this.get_nodes()]
         };
+        return data;
+    }
+
+    get_nodes() {
+        let nodes = {}
+        if (this.token?.data?.flags?.behaviour_trees?.master_node) {
+            this.log.debug('AI Data found, loading...', this.token.data.flags.behaviour_trees.master_node);
+            data = JSON.parse(this.token.data.flags.behaviour_trees.master_node);
+        } else {
+            if (this.token?.data?.flags?.behaviour_trees?.nodes) {
+                nodes = JSON.parse(this.token.data.flags.behaviour_trees.master_node);
+                nodes[data.uuid] = data
+            }
+            this.token.setFlag('behaviour_trees', 'ai_data', JSON.stringify(data));
+        }
         return data;
     }
 
     activateListeners(html) {
         super.activateListeners(html);
-        html.find(".clear-ai-data").click(this._on_new_data.bind(this));
+        html.find(".new-ai-data").click(this._on_new_data.bind(this));
         html.find(".clear-ai-data").click(this._on_clear_data.bind(this));
-        html.find(".clear-ai-data").click(this._on_save_data.bind(this));
+        html.find(".save-ai-data").click(this._on_save_data.bind(this));
         let drag = document.getElementsByClassName("moveable");
         console.log('DRAG LIST', drag);
         for (let i = 0; i < drag.length; i++) {
@@ -96,22 +111,6 @@ class ai_builder extends FormApplication {
 
     _on_save_data(event) {
         event.preventDefault();
-    }
-
-    _get_nodes() {
-        let data = bt.ai.new_node('loop', 'Main Loop', 300, 100);
-        let nodes = {}
-        if (this.token?.data?.flags?.behaviour_trees?.ai_data) {
-            this.log.debug('AI Data found, loading...', this.token.data.flags.behaviour_trees.ai_data);
-            data = JSON.parse(this.token.data.flags.behaviour_trees.ai_data);
-        } else {
-            if (this.token?.data?.flags?.behaviour_trees?.nodes) {
-                nodes = JSON.parse(this.token.data.flags.behaviour_trees.ai_data);
-                nodes[data.uuid] = data
-            }
-            this.token.setFlag('behaviour_trees', 'ai_data', JSON.stringify(data));
-        }
-        return data;
     }
 
     async _updateObject(event, data) {
