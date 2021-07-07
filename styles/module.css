@@ -22,6 +22,7 @@
     background-color: gray;
     color: #000;
     margin: 5px;
+    list-style-type: none;
 }
 .bb {
     border: 1px solid #000;
