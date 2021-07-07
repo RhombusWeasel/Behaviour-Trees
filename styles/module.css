@@ -23,6 +23,8 @@
     color: #000;
     margin: 5px;
     list-style-type: none;
+    width: 100px;
+    height: 20px;
 }
 .bb {
     border: 1px solid #000;
