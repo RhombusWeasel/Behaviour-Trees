@@ -1,6 +1,6 @@
 .node-box {
     position:relative;
-    margin: 5px;
+    margin: auto;
 }
 .moveable {
     position: absolute;
