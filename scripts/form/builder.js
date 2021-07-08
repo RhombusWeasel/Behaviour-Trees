@@ -66,7 +66,7 @@ class ai_builder extends FormApplication {
     getData() {
         let data = {
             token: this.token,
-            nodes: [this.get_nodes()]
+            nodes: this.get_nodes()
         };
         return data;
     }
