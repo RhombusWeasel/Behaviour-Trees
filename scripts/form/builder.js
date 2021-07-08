@@ -51,6 +51,7 @@ class ai_builder extends FormApplication {
         super();
         this.token = canvas.tokens.placeables.find(i => i.name == token.name);
         this.log = new bt.logger(token.name);
+        this.nodes = [];
     }
 
     static get defaultOptions() {
@@ -70,13 +71,33 @@ class ai_builder extends FormApplication {
         return data;
     }
 
+    get_node_data(data, id) {
+        let node = bt?.node_data?.[id] ? bt.node_data[id] : false;
+        if (node) {
+            data.push(node);
+            if (node.branches) {
+                for (let i = 0; i < node.branches.length; i++) {
+                    const child = node.branches[i];
+                    data = this.get_node_data(data, child);
+                }
+            }
+        }
+        return data;
+    }
+
     get_nodes() {
         let data = []
         if (this.token?.data?.flags?.behaviour_trees?.master_node) {
-            this.log.debug('AI Data found, loading...', this.token.data.flags.behaviour_trees.master_node);
-            data = JSON.parse(this.token.data.flags.behaviour_trees.master_node);
+            let m_node = this.token.data.flags.behaviour_trees.master_node
+            this.log.debug('AI Data found, loading...', m_node);
+            data.push(this.get_node_data(data, m_node))
         } else {
-            //this.token.setFlag('behaviour_trees', 'ai_data', JSON.stringify(data));
+            let node = bt.ai.new_node('loop', 'Loop', 300, 100, 'none');
+            bt.node_data[node.uuid] = node;
+            this.journal.update({
+                content: JSON.stringify(bt.node_data)
+            });
+            data.push(node);
         }
         return data;
     }
