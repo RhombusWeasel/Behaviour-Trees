@@ -94,7 +94,7 @@ class ai_builder extends FormApplication {
         } else {
             let node = bt.ai.new_node('loop', 'Loop', 300, 100, 'none');
             bt.node_data[node.uuid] = node;
-            this.journal.update({
+            bt.journal.update({
                 content: JSON.stringify(bt.node_data)
             });
             data.push(node);
