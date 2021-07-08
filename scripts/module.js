@@ -44,7 +44,7 @@ Hooks.once('ready', async function() {
         mod_log.debug('New Node Data:', bt.journal);
         bt.node_data = {}
     } else {
-        let raw_data = bt.journal.data.content.substring(3, bt.journal.data.content.length - 4);
+        let raw_data = bt.journal.data.content//.substring(3, bt.journal.data.content.length - 4);
         bt.node_data = JSON.parse(raw_data);
         mod_log.info('Node Data loaded.', bt.node_data);
     }
