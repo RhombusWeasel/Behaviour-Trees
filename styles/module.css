@@ -1,5 +1,6 @@
 .node-box {
     position:relative;
+    margin: 5px;
 }
 .moveable {
     position: absolute;
@@ -9,7 +10,7 @@
     z-index: 9;
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 0 1rem 1rem #000;
+    box-shadow: 0 0 .1rem .1rem #000;
 }
 .moveable-header {
     cursor: move;
