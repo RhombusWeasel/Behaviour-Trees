@@ -14,12 +14,15 @@ Hooks.on('renderTokenHUD', async (hud, html, token) => {
     ui_log.debug('Behaviour Tree HUD.', hud, html, token);
     if (game.user.isGM) {
         const ai_tool = await renderTemplate('/modules/behaviour_trees/templates/hud.html', {});
-        html.find('div.right').append(ai_tool);
-        ui_log.debug('Added AI button.', html);
-        html.find('div.right.control-icon.editor-open').click(
-            (event) => {
+        html.find('div.right')
+            .append(ai_tool)
+            .click((event) => {
                 ui_log.debug(event);
-                new ai_builder(token).render(true);
+                let element = event.currentTarget;
+                let action = element.closest(".control-icon").dataset.action;
+                if (action == "bt-ai-selector") {
+                    new ai_builder(token).render(true);
+                }
             }
         );
     }
