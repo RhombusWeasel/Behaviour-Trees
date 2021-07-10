@@ -64,11 +64,12 @@
     border-radius: 10px;
 }
 .expand {
-    inset: 1rem;
+    height: 90%;
+    margin: 5px;
 }
 .fill {
-    position: fixed;
-    inset: 0;
+    width: 100%;
+    height: 100%;
 }
 .center{
     text-align: center;

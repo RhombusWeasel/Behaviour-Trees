@@ -130,5 +130,10 @@ let bt = {
                 return bt.WAIT;
             }
         },
+        or: {
+            update: function(state, token) {
+
+            }
+        }
     },
 };
