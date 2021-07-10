@@ -15,6 +15,7 @@ Hooks.on('renderTokenHUD', async (hud, html, token) => {
     if (game.user.isGM) {
         const ai_tool = await renderTemplate('/modules/behaviour_trees/templates/hud.html', {});
         html.find('div.right').append(ai_tool);
+        ui_log.debug('Added AI button.', html);
         html.find('div.right.control-icon.editor-open').click(
             (event) => {
                 ui_log.debug(event);
